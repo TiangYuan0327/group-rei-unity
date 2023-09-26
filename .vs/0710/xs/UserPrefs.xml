@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{AAF5C1B6-B405-FF7E-DB87-46A9A995BE10}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NoteObject.cs">
+    <Files>
+      <File FileName="Assets/fall.cs" Line="5" Column="15" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="24" Column="25" />
+      <File FileName="Assets/Scripts/NoteObject.cs" Line="28" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="357677b7-7837-43a3-a96a-820b457a8749" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
