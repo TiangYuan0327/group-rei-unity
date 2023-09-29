@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NoteObject : MonoBehaviour
 {
-    private string jText;
+    /*private string jText;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Crash!")) jText = "Crash!";
@@ -48,11 +48,6 @@ public class NoteObject : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
-    }
-
     private void AddCombo()
     {
         Combo.combonumber++;
@@ -65,5 +60,5 @@ public class NoteObject : MonoBehaviour
         Combo.combonumber = 0;
         Combo.judgeText = jText;
         Debug.Log(Combo.combonumber);
-    }
+    }*/
 }

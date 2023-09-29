@@ -68,8 +68,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (gameObject.CompareTag("LeftJoystick")) crash = 1;
-        else if (gameObject.CompareTag("RightJoystick")) crash = 2;
+        if (gameObject.CompareTag("LeftJoystick")) crash = -1;
+        else if (gameObject.CompareTag("RightJoystick")) crash = 1;
         cam = null;
         if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
             cam = canvas.worldCamera;
