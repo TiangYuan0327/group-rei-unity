@@ -58,6 +58,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\NoteJudge.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Combo.cs" />
     <Compile Include="Assets\Scripts\NoteObject.cs" />
@@ -66,7 +67,7 @@
     <Compile Include="Assets\Scripts\Fall.cs" />
     <Compile Include="Assets\Scripts\PostMethod.cs" />
     <Compile Include="Assets\Scripts\GetMethod.cs" />
-    <Compile Include="Assets\Scripts\NoteJudge.cs" />
+    <Compile Include="Assets\Scripts\Resolution.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
