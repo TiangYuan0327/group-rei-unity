@@ -7,81 +7,78 @@ public class NoteJudge : MonoBehaviour
 {
     private string jText;
     private float hitTime;
-    private bool isMouseDown = false;
+    private bool isLongEndPressed = false;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Joystick.crash == -1 && gameObject.CompareTag("LeftHandle"))
+        if ((Joystick.crash == -1 && gameObject.CompareTag("LeftHandle")) || (gameObject.CompareTag("RightHandle") && Joystick.crash == 1))
         {
-            if (collision.CompareTag("Crash!") || collision.CompareTag("Smash!") || collision.CompareTag("Bang!") || collision.CompareTag("Boo!") || collision.CompareTag("Ouch!"))
+            switch (collision.tag)
             {
-                jText = collision.gameObject.name;
+                case "Crash!":
+                case "Smash!":
+                case "Bang!":
+                case "Boo!":
+                case "Ouch!":
+                    jText = collision.tag;
+                    break;
             }
-
             if (((collision.CompareTag("NormalHit") || collision.CompareTag("ColorHit"))))
             {
-                if (jText == "Crash!" || jText == "Smash!" || jText == "Bang!")
-                {
-                    AddCombo();
-                    Destroy(collision.gameObject);
-                }
-                else if (jText == "Boo!" || jText == "Ouch!")
-                {
-                    ClearCombo();
-                    Destroy(collision.gameObject);
-                }
+                AddCombo();
+                Destroy(collision.gameObject);
             }
             else if (collision.CompareTag("LongStart"))
             {
                 AddCombo();
+                isLongEndPressed = true;
                 Destroy(collision.gameObject);
             }
             else if (collision.CompareTag("LongContinue"))
             {
                 hitTime += Time.deltaTime;
+                isLongEndPressed = true;
                 Debug.Log(hitTime);
                 if (hitTime >= 1)
-                {
+                {    
                     AddCombo();
                     hitTime = 0;
                 }
             }
-        }
-        else if (gameObject.CompareTag("RightHandle") && Joystick.crash == 1)
-        {
-            if (collision.CompareTag("Crash!") || collision.CompareTag("Smash!") || collision.CompareTag("Bang!") || collision.CompareTag("Boo!") || collision.CompareTag("Ouch!"))
-            {
-                jText = collision.gameObject.name;
-            }
-
-            if (((collision.CompareTag("NormalHit") || collision.CompareTag("ColorHit"))))
-            {
-                if (jText == "Crash!" || jText == "Smash!" || jText == "Bang!")
-                {
-                    AddCombo();
-                    Destroy(collision.gameObject);
-                }
-                else if (jText == "Boo!" || jText == "Ouch!")
-                {
-                    ClearCombo();
-                    Destroy(collision.gameObject);
-                }
-            }
-        }       
+        }     
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("LongEnd") && isLongEndPressed)
+        {
+            AddCombo();
+            Destroy(collision.gameObject);
+            isLongEndPressed = false; // 重置标志
+        }
+    }
 
     private void AddCombo()
     {
-        Combo.combonumber++;
-        Combo.judgeText = jText;
-        Debug.Log(Combo.combonumber);
-    }
-
-    private void ClearCombo()
-    {
-        Combo.combonumber = 0;
-        Combo.judgeText = jText;
-        Debug.Log(Combo.combonumber);
+        Debug.Log(jText);
+        switch (jText)
+        {
+            case "Crash!":
+            case "Smash!":
+            case "Bang!":
+                Debug.Log(jText);
+                Combo.combonumber++;
+                Combo.judgeText = jText;
+                Debug.Log(Combo.combonumber);
+                break;
+            case "Boo!":
+            case "Ouch!":
+                Combo.combonumber = 0;
+                Combo.judgeText = jText;
+                Debug.Log (Combo.combonumber);
+                break;
+            default:
+                break;
+        }     
     }
 }
