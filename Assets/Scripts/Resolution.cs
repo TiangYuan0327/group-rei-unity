@@ -11,11 +11,8 @@ public class Resolution : MonoBehaviour
     {
         float screenRatio = Screen.width / (float)Screen.height;
         float referenceRatio = referenceScreenWidth / referenceScreenHeight;
-        Debug.Log(screenRatio);
-        Debug.Log(referenceRatio);
 
         Camera mainCamera = Camera.main;
         mainCamera.orthographicSize *= referenceRatio / screenRatio;
-        Debug.Log(mainCamera.orthographicSize);
     }
 }

@@ -19,6 +19,9 @@ TagManager:
   - Crash!
   - Boo!
   - Ouch!
+  - LongStart
+  - LongContinue
+  - LongEnd
   layers:
   - Default
   - TransparentFX

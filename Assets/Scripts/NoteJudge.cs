@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class NoteJudge : MonoBehaviour
 {
     private string jText;
+    private float hitTime;
+    private bool isMouseDown = false;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (Joystick.crash == -1 && gameObject.CompareTag("LeftHandle"))
@@ -26,6 +29,21 @@ public class NoteJudge : MonoBehaviour
                 {
                     ClearCombo();
                     Destroy(collision.gameObject);
+                }
+            }
+            else if (collision.CompareTag("LongStart"))
+            {
+                AddCombo();
+                Destroy(collision.gameObject);
+            }
+            else if (collision.CompareTag("LongContinue"))
+            {
+                hitTime += Time.deltaTime;
+                Debug.Log(hitTime);
+                if (hitTime >= 1)
+                {
+                    AddCombo();
+                    hitTime = 0;
                 }
             }
         }
@@ -51,6 +69,7 @@ public class NoteJudge : MonoBehaviour
             }
         }       
     }
+
 
     private void AddCombo()
     {
