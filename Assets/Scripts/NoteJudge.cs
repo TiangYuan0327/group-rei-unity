@@ -34,28 +34,21 @@ public class NoteJudge : MonoBehaviour
                 isLongEndPressed = true;
                 Destroy(collision.gameObject);
             }
-            else if (collision.CompareTag("LongContinue"))
-            {
-                hitTime += Time.deltaTime;
-                isLongEndPressed = true;
-                Debug.Log(hitTime);
-                if (hitTime >= 1)
-                {    
-                    AddCombo();
-                    hitTime = 0;
-                }
-            }
+            
         }     
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("LongEnd") && isLongEndPressed)
+        
+        if (collision.CompareTag("LongEnd") && isLongEndPressed && Joystick.crash == 0)
         {
             AddCombo();
             Destroy(collision.gameObject);
             isLongEndPressed = false; // 重置标志
         }
+        
+            
     }
 
     private void AddCombo()

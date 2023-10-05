@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -75,37 +76,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1462}
     - Class: 114
-      Script: {instanceID: 1790}
+      Script: {instanceID: 1484}
     - Class: 114
-      Script: {instanceID: 2008}
+      Script: {instanceID: 1792}
     - Class: 114
-      Script: {instanceID: 2100}
+      Script: {instanceID: 2010}
     - Class: 114
-      Script: {instanceID: 2110}
+      Script: {instanceID: 2102}
     - Class: 114
-      Script: {instanceID: 2346}
+      Script: {instanceID: 2112}
     - Class: 114
-      Script: {instanceID: 2408}
+      Script: {instanceID: 2348}
     - Class: 114
-      Script: {instanceID: 2484}
+      Script: {instanceID: 2410}
     - Class: 114
-      Script: {instanceID: 2630}
+      Script: {instanceID: 2486}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2632}
     - Class: 114
-      Script: {instanceID: 3012}
+      Script: {instanceID: 2802}
     - Class: 114
-      Script: {instanceID: 3470}
+      Script: {instanceID: 3014}
     - Class: 114
-      Script: {instanceID: 3622}
+      Script: {instanceID: 3472}
     - Class: 114
-      Script: {instanceID: 4256}
+      Script: {instanceID: 3624}
     - Class: 114
-      Script: {instanceID: 4374}
+      Script: {instanceID: 4258}
     - Class: 114
-      Script: {instanceID: 4590}
+      Script: {instanceID: 4376}
     - Class: 114
-      Script: {instanceID: 21066}
+      Script: {instanceID: 4592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -137,6 +138,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DynamicJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: 048cefc79ff7b4f52f96a2b87f5dd674
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Resolution
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -727,10 +734,10 @@ ScriptsOnlyBuild:
     className: GetMethod
   - hash:
       serializedVersion: 2
-      Hash: 048cefc79ff7b4f52f96a2b87f5dd674
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Resolution
+    className: CreateLong
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

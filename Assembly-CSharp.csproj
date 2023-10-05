@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\Scripts\Resolution.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
@@ -67,7 +68,7 @@
     <Compile Include="Assets\Scripts\Fall.cs" />
     <Compile Include="Assets\Scripts\PostMethod.cs" />
     <Compile Include="Assets\Scripts\GetMethod.cs" />
-    <Compile Include="Assets\Scripts\Resolution.cs" />
+    <Compile Include="Assets\Scripts\CreateLong.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
