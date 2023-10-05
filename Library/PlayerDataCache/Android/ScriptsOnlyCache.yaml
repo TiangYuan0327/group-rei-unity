@@ -104,9 +104,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4258}
     - Class: 114
-      Script: {instanceID: 4376}
+      Script: {instanceID: 4378}
     - Class: 114
-      Script: {instanceID: 4592}
+      Script: {instanceID: 4594}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -140,7 +140,7 @@ ScriptsOnlyBuild:
     className: DynamicJoystick
   - hash:
       serializedVersion: 2
-      Hash: 048cefc79ff7b4f52f96a2b87f5dd674
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Resolution
@@ -650,6 +650,12 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
+      Hash: c98d7627cc8b0f26f2dda5d1ab113f39
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CreateLong
+  - hash:
+      serializedVersion: 2
       Hash: 528e9858840cb8370d93939fff6b42d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -732,12 +738,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GetMethod
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CreateLong
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

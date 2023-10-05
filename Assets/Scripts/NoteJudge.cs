@@ -34,6 +34,17 @@ public class NoteJudge : MonoBehaviour
                 isLongEndPressed = true;
                 Destroy(collision.gameObject);
             }
+            else if (collision.CompareTag("LongContinue"))
+            {
+                hitTime += Time.deltaTime;
+                isLongEndPressed = true;
+                Destroy(collision.gameObject);
+                if (hitTime >= 1)
+                {
+                    AddCombo();
+                    hitTime = 0;
+                }
+            }
             
         }     
     }
