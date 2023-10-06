@@ -13,7 +13,5 @@ public class NoteObject : MonoBehaviour
             Combo.judgeText = "Ouch!";
             Destroy(gameObject);
         }
-        
-        
     }
 }

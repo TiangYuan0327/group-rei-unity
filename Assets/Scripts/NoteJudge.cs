@@ -45,7 +45,26 @@ public class NoteJudge : MonoBehaviour
                     hitTime = 0;
                 }
             }
-            
+            else if (collision.CompareTag("UpHit"))
+            {
+                if(jText == "Crash!")
+                {
+                    jText = "Bang!";
+                    AddCombo();
+                    Destroy(collision.gameObject) ;
+                }
+                else if(jText == "Bang!")
+                {
+                    jText = "Crash!";
+                    AddCombo();
+                    Destroy(collision.gameObject);
+                }
+                else
+                {
+                    AddCombo();
+                    Destroy(collision.gameObject);
+                }
+            }
         }     
     }
 
