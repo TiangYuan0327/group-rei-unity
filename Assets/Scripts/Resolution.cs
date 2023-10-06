@@ -15,15 +15,5 @@ public class Resolution : MonoBehaviour
         float referenceRatio = canvasWidth / canvasHeight;
         Camera mainCamera = Camera.main;
         mainCamera.orthographicSize *= referenceRatio / screenRatio;
-
     }
-    private void Update()
-    {
-        if(Input.GetKey(KeyCode.Space))
-        {
-            GameObject createdObject = Instantiate(Lg, new Vector2(500,0), Quaternion.identity);
-            createdObject.transform.SetParent(canvasRect.transform, false);
-        }
-    }
-
 }

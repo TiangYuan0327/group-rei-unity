@@ -68,7 +68,7 @@
     <Compile Include="Assets\Scripts\Fall.cs" />
     <Compile Include="Assets\Scripts\PostMethod.cs" />
     <Compile Include="Assets\Scripts\GetMethod.cs" />
-    <Compile Include="Assets\Scripts\CreateLong.cs" />
+    <Compile Include="Assets\Scripts\CreatNote.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
