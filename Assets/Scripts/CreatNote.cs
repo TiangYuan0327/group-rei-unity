@@ -1,35 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Xml.Serialization;
+using System;
+using System.IO;
+using UnityEditor.Experimental.RestService;
 
 public class CreatNote : MonoBehaviour
 {
-    public GameObject notePrefab; // 音符的预制体
-    public Transform spawnPoint; // 音符生成的位置
+    
+    public GameObject note;
+    public Transform canvasTransform;
 
-    private float spawnTime = 2.0f; // 音符生成的时间间隔
-    private float nextSpawnTime = 0.0f; // 下一个音符生成的时间
+    [SerializeField]
+    NoteData notedata;
 
-    private RectTransform canvasRect;
-
+    [System.Serializable]
+    public class NoteData
+    {
+        public string noteText;
+        public int notenumber;
+    }
     private void Start()
     {
-        canvasRect = GameObject.Find("Canvas").GetComponent<RectTransform>();
-    }
-    void Update()
-    {
-        // 生成音符
-        if (Time.time >= nextSpawnTime)
-        {
-            SpawnNote();
-            nextSpawnTime = Time.time + spawnTime;
-        }
+        FileStream fs = new FileStream(Application.dataPath + "/SaveTest.txt", FileMode.Open);
+        StreamReader sr = new StreamReader(fs);
+        notedata.noteText = sr.ReadLine();
+        notedata.notenumber = int.Parse(sr.ReadLine());
     }
 
-    void SpawnNote()
+    void Update()
     {
-        // 生成音符的逻辑，这里只是简单地实例化音符预制体并设置位置
-        GameObject note = Instantiate(notePrefab, new Vector2(-450, 450), Quaternion.identity);
-        note.transform.SetParent(canvasRect.transform, false);
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            PlayerPrefs.SetInt("notenumber", notedata.notenumber);
+            FileStream fs = new FileStream(Application.dataPath + "/SaveTest.txt", FileMode.Create);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine(notedata.noteText);
+            sw.WriteLine(notedata.notenumber);        
+            sw.Close();
+            fs.Close();
+            Debug.Log("有喔");
+        }       
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (notedata.notenumber == 1)
+            {
+                GameObject createNote = Instantiate(note, new Vector2(0,0), Quaternion.identity);
+                createNote.transform.SetParent(canvasTransform, false);
+            }
+        }
     }
 }
