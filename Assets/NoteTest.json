@@ -1,0 +1,20 @@
+[
+    {
+        "noteType": "NT01",
+        "noteTime": 1,
+        "noteHeight": 1,
+        "noteLocation": -3
+    },
+    {
+        "noteType": "NT02",
+        "noteTime": 1.4,
+        "noteHeight": 1,
+        "noteLocation": 2
+    },
+    {
+        "noteType": "NT01",
+        "noteTime": 2,
+        "noteHeight": 1,
+        "noteLocation": 1
+    }
+]

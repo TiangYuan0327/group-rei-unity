@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Xml.Serialization;
 using System;
 using System.IO;
-using UnityEditor.Experimental.RestService;
+
 
 public class CreatNote : MonoBehaviour
 {
@@ -12,43 +12,54 @@ public class CreatNote : MonoBehaviour
     public GameObject note;
     public Transform canvasTransform;
 
+    public string fileName = "/NoteTest.json";
+    public NoteData[] songs;
+
     [SerializeField]
     NoteData notedata;
 
     [System.Serializable]
     public class NoteData
     {
-        public string noteText;
-        public int notenumber;
+        //音符種類、出現時機、音符長度、出現位置
+        public string noteType;
+        public float noteTime;
+        public float noteHeight;
+        public int noteLocation;
     }
     private void Start()
     {
-        FileStream fs = new FileStream(Application.dataPath + "/SaveTest.txt", FileMode.Open);
-        StreamReader sr = new StreamReader(fs);
-        notedata.noteText = sr.ReadLine();
-        notedata.notenumber = int.Parse(sr.ReadLine());
+            
     }
-
+    
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.S))
         {
-            PlayerPrefs.SetInt("notenumber", notedata.notenumber);
-            FileStream fs = new FileStream(Application.dataPath + "/SaveTest.txt", FileMode.Create);
-            StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine(notedata.noteText);
-            sw.WriteLine(notedata.notenumber);        
-            sw.Close();
-            fs.Close();
+            Debug.Log(Application.dataPath);
+            string filePath = Application.dataPath + "/NoteTest.json";
+            if (File.Exists(filePath)) {
+                string json = File.ReadAllText(filePath);
+                songs = JsonUtility.FromJson<NoteData[]>(json);
+
+                foreach (NoteData song in songs)
+                {
+                    Debug.Log("Type: " + song.noteType);
+                    Debug.Log("Time: " + song.noteTime);
+                    Debug.Log("長度: " + song.noteHeight);
+                    Debug.Log("位置" + song.noteLocation);
+                }
+            }
+            else
+            {
+                Debug.Log("not found");
+            }
+
             Debug.Log("有喔");
         }       
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (notedata.notenumber == 1)
-            {
-                GameObject createNote = Instantiate(note, new Vector2(0,0), Quaternion.identity);
-                createNote.transform.SetParent(canvasTransform, false);
-            }
+            
         }
     }
 }

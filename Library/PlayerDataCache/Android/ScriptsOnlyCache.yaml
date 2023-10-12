@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Combo
+    - CreatNote
     - Fall
     - FixedJoystick
     - GameManager
@@ -30,6 +31,8 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    Unity.Timeline.Editor.dll:
+    - TimelinePreferences
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -102,7 +105,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3624}
     - Class: 114
-      Script: {instanceID: 4258}
+      Script: {instanceID: 4072}
+    - Class: 114
+      Script: {instanceID: 4260}
     - Class: 114
       Script: {instanceID: 4378}
     - Class: 114
@@ -140,7 +145,7 @@ ScriptsOnlyBuild:
     className: DynamicJoystick
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 49b4f175e42a1f8a0715c2b18ef02dfd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Resolution
@@ -590,6 +595,12 @@ ScriptsOnlyBuild:
     className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
+      Hash: 383132d109591192f14befead35141c0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CreatNote
+  - hash:
+      serializedVersion: 2
       Hash: b424b4eeb810aecb0ff91c62639241e9
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
@@ -648,12 +659,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinEntity
-  - hash:
-      serializedVersion: 2
-      Hash: c98d7627cc8b0f26f2dda5d1ab113f39
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CreateLong
   - hash:
       serializedVersion: 2
       Hash: 528e9858840cb8370d93939fff6b42d9
