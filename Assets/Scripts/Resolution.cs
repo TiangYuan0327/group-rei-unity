@@ -5,7 +5,6 @@ using UnityEngine;
 public class Resolution : MonoBehaviour
 {
     private RectTransform canvasRect;
-    public GameObject Lg;
     private void Start()
     {
         canvasRect =GameObject.Find("Canvas").GetComponent<RectTransform>();

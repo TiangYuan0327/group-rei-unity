@@ -13,6 +13,7 @@ public class EnterStage : MonoBehaviour
 
     public void Stage()
     {
+        Destroy(GameObject.Find("DefaultDialogPrefab(Clone)"));
         SceneManager.LoadScene("SampleScene");
     }
     public void exit()
