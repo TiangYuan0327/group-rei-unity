@@ -1,4 +1,6 @@
 using Flower;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class IntroSceneController : MonoBehaviour
@@ -9,7 +11,13 @@ public class IntroSceneController : MonoBehaviour
     {
         fs = FlowerManager.Instance.CreateFlowerSystem("default", false);
         fs.SetupDialog();
-        fs.ReadTextFromResource("intro");
+        fs.ReadTextFromResource("intro");   
+        fs.RegisterCommand("lock_conversation",(List<string> _params) => {
+            EnterStage.canHit = false;
+        } );
+        fs.RegisterCommand("release_conversation", (List<string> _params) => {
+            EnterStage.canHit = true;
+        });
     }
 
     // Update is called once per frame

@@ -1,12 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioSource music;
-    public bool startPlaying;
+    private static GameManager instance;
 
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +30,5 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void NoteHit() {
-        Debug.Log("擊中");
-    }
-    public void NoteMissed() {
-        Debug.Log("Miss");
     }
 }

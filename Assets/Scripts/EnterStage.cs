@@ -6,19 +6,29 @@ using UnityEngine.UI;
 
 public class EnterStage : MonoBehaviour
 {
+    public static bool canHit = false;
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     public void Stage()
     {
-        Destroy(GameObject.Find("DefaultDialogPrefab(Clone)"));
-        SceneManager.LoadScene("SampleScene");
+        if (canHit)
+        {
+            Destroy(GameObject.Find("DefaultDialogPrefab(Clone)"));
+            SceneManager.LoadScene("SampleScene");
+        }
+        
     }
     public void exit()
     {
-        Application.Quit();
+        if (canHit)
+        {
+            Application.Quit();
+        }
+        
     }
     // Update is called once per frame
     void Update()
