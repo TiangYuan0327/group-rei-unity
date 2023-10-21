@@ -15,7 +15,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -26,6 +25,9 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.CollabProxy.Editor.dll:
+    - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
+    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -77,35 +79,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1462}
     - Class: 114
-      Script: {instanceID: 1484}
+      Script: {instanceID: 1492}
     - Class: 114
-      Script: {instanceID: 1792}
+      Script: {instanceID: 1800}
     - Class: 114
-      Script: {instanceID: 2102}
+      Script: {instanceID: 2110}
     - Class: 114
-      Script: {instanceID: 2112}
+      Script: {instanceID: 2120}
     - Class: 114
-      Script: {instanceID: 2348}
+      Script: {instanceID: 2356}
     - Class: 114
-      Script: {instanceID: 2486}
+      Script: {instanceID: 2494}
     - Class: 114
-      Script: {instanceID: 2632}
+      Script: {instanceID: 2640}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 3014}
+      Script: {instanceID: 3022}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3126}
     - Class: 114
-      Script: {instanceID: 3456}
+      Script: {instanceID: 3464}
     - Class: 114
-      Script: {instanceID: 3826}
+      Script: {instanceID: 3834}
     - Class: 114
-      Script: {instanceID: 4268}
+      Script: {instanceID: 4276}
     - Class: 114
-      Script: {instanceID: 4486}
+      Script: {instanceID: 4494}
     - Class: 114
-      Script: {instanceID: 4604}
+      Script: {instanceID: 4612}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -156,35 +158,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1462}
     - Class: 114
-      Script: {instanceID: 1484}
+      Script: {instanceID: 1492}
     - Class: 114
-      Script: {instanceID: 2010}
+      Script: {instanceID: 2018}
     - Class: 114
-      Script: {instanceID: 2112}
+      Script: {instanceID: 2120}
     - Class: 114
-      Script: {instanceID: 2348}
+      Script: {instanceID: 2356}
     - Class: 114
-      Script: {instanceID: 2410}
+      Script: {instanceID: 2418}
     - Class: 114
-      Script: {instanceID: 2486}
+      Script: {instanceID: 2494}
     - Class: 114
-      Script: {instanceID: 2632}
+      Script: {instanceID: 2640}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 3014}
+      Script: {instanceID: 3022}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3126}
     - Class: 114
-      Script: {instanceID: 3476}
+      Script: {instanceID: 3484}
     - Class: 114
-      Script: {instanceID: 3628}
+      Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 4080}
+      Script: {instanceID: 4088}
     - Class: 114
-      Script: {instanceID: 4386}
+      Script: {instanceID: 4394}
     - Class: 114
-      Script: {instanceID: 4486}
+      Script: {instanceID: 4494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -686,7 +688,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
-      Hash: f0d91031334e59457ed0c9b90d06cc0d
+      Hash: 2a2201795bf5510e312f256db7cd4e3b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreatNote

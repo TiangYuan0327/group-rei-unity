@@ -16,7 +16,7 @@ public class CreatNote : MonoBehaviour
     public Transform canvasTransform;
     private void Start()
     {
-        string filePath = Application.dataPath + "/Test.txt";
+        string filePath = Path.Combine(Application.persistentDataPath + "/Test.txt");
         if (File.Exists(filePath))
         {
             string[] readText = File.ReadAllLines(filePath);
@@ -26,20 +26,11 @@ public class CreatNote : MonoBehaviour
                 if (line.Length >= 10)
                 {
                     string noteKind = line.Substring(0, 1);
-                    float noteStart = float.Parse(line.Substring(1, 4));
-                    float noteEnd = float.Parse(line.Substring(5, 4));
+                    float noteStart = float.Parse(line.Substring(1, 4))/10f;
+                    float noteEnd = float.Parse(line.Substring(5, 4))/10f;
                     string noteLocation = line.Substring(9, 1);
-                    Debug.Log("種類:" + noteKind);
-                    Debug.Log("開始時間:" + noteStart);
-                    Debug.Log("結束時間:" + noteEnd);
-                    Debug.Log("生成位置:" + noteLocation);
 
-                    GameObject newNote = CreateNote(noteKind, noteStart, noteEnd, noteLocation);
-                    if (newNote != null)
-                    {
-                        newNote.transform.SetParent(canvasTransform, false);
-                        newNote.transform.localPosition = Vector3.zero;
-                    }
+                    StartCoroutine(CreateNoteDelayed(noteKind, noteStart, noteEnd, noteLocation));
                 }
                 else
                 {
@@ -49,52 +40,83 @@ public class CreatNote : MonoBehaviour
         }
         else
         {
-            Debug.Log("檔案不存在");
+            Debug.Log(filePath);
         }
     }
     void Update()
     {
         
     }
-    public GameObject CreateNote(string noteKind, float noteStart, float noteEnd, string noteLocation)
+    private IEnumerator CreateNoteDelayed(string noteKind, float noteStart, float noteEnd, string noteLocation)
+    {
+        float delay = noteStart;
+        yield return new WaitForSeconds(delay);
+        
+        if(noteStart != noteEnd)
+        {
+            while(Time.time < noteEnd)
+            {
+                GameObject newNote = CreateNote(noteKind, noteLocation);
+                if (newNote != null)
+                {
+                    newNote.transform.SetParent(canvasTransform, false);
+                }
+
+                yield return new WaitForSeconds(0.1f);
+            }
+            
+        }
+        else
+        {
+            GameObject newNote = CreateNote(noteKind, noteLocation);
+            if (newNote != null)
+            {
+                newNote.transform.SetParent(canvasTransform, false);
+            }
+        }
+        
+    }
+
+    public GameObject CreateNote(string noteKind, string noteLocation)
     {
         GameObject newNote = null;
-
+        Vector2 noteVect = Vector2.zero;
+        switch (noteLocation)
+        {
+            case "1":
+                noteVect = new Vector2(-550,450);
+                break;
+            case "2":
+                noteVect = new Vector2(-454, 450);
+                break;
+            case "3":
+                noteVect = new Vector2(-358, 450);
+                break;
+            case "4":
+                noteVect = new Vector2(358, 450);
+                break;
+            case "5":
+                noteVect = new Vector2(454, 450);
+                break;
+            case "6":
+                noteVect = new Vector2(550, 450);
+                break;
+        }
         switch (noteKind)
         {
             case "1":
-                newNote = Instantiate(NoteType1Prefab, Vector3.zero, Quaternion.identity);
+                newNote = Instantiate(NoteType1Prefab, noteVect, Quaternion.identity);
                 break;
             case "2":
-                newNote = Instantiate(NoteType2Prefab, Vector3.zero, Quaternion.identity);
+                newNote = Instantiate(NoteType2Prefab, noteVect, Quaternion.identity);
                 break;
             case "3":
-                newNote = Instantiate(NoteType3Prefab, Vector3.zero, Quaternion.identity);
+                newNote = Instantiate(NoteType3Prefab, noteVect, Quaternion.identity);
                 break;
             case "4":
-                newNote = Instantiate(NoteType4Prefab, Vector3.zero, Quaternion.identity);
+                newNote = Instantiate(NoteType4Prefab, noteVect, Quaternion.identity);
                 break;
         }
-        /*
-        if (noteKind == "1")
-        {
-            newNote = Instantiate(NoteType1Prefab, Vector3.zero, Quaternion.identity);
-            
-        }
-        else if (noteKind == "2")
-        {
-            newNote = Instantiate(NoteType2Prefab, Vector3.zero, Quaternion.identity);
-        }
-        else if (noteKind == "3")
-        {
-            newNote = Instantiate(NoteType3Prefab, Vector3.zero, Quaternion.identity);
-        }
-        else if (noteKind == "4")
-        {
-            newNote = Instantiate(NoteType4Prefab, Vector3.zero, Quaternion.identity);
-        }
-        */
-
         return newNote;
     }
 }

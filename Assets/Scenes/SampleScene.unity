@@ -745,6 +745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Color (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8646043642124612663, guid: 080b6f53ce015174f9fec7a329ebb40e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 080b6f53ce015174f9fec7a329ebb40e, type: 3}
 --- !u!224 &302791030 stripped
@@ -3051,6 +3055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LongContinue (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7982474774987789847, guid: eecf1a89461c38446839c9f7e0f1082d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eecf1a89461c38446839c9f7e0f1082d, type: 3}
 --- !u!224 &1934674315 stripped
@@ -3354,6 +3362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpHit
       objectReference: {fileID: 0}
+    - target: {fileID: 3195414982643556820, guid: 9e1ca915518e1084d83b25d072bb64aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3195414982643556843, guid: 9e1ca915518e1084d83b25d072bb64aa, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3535,6 +3547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LongContinue
       objectReference: {fileID: 0}
+    - target: {fileID: 7982474774987789847, guid: eecf1a89461c38446839c9f7e0f1082d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eecf1a89461c38446839c9f7e0f1082d, type: 3}
 --- !u!1001 &7022285852422490199
@@ -3631,6 +3647,10 @@ PrefabInstance:
     - target: {fileID: 7022285852361132317, guid: ef02022dae751c3409a3d3e7c5678c61, type: 3}
       propertyPath: m_Name
       value: LongStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022285852361132317, guid: ef02022dae751c3409a3d3e7c5678c61, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef02022dae751c3409a3d3e7c5678c61, type: 3}
@@ -3729,6 +3749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Color
       objectReference: {fileID: 0}
+    - target: {fileID: 8646043642124612663, guid: 080b6f53ce015174f9fec7a329ebb40e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 080b6f53ce015174f9fec7a329ebb40e, type: 3}
 --- !u!1001 &9188249003663233014
@@ -3741,6 +3765,10 @@ PrefabInstance:
     - target: {fileID: 9188249003918429409, guid: a5e2319ec06689143909090292039291, type: 3}
       propertyPath: m_Name
       value: Normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188249003918429409, guid: a5e2319ec06689143909090292039291, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9188249003918429422, guid: a5e2319ec06689143909090292039291, type: 3}
       propertyPath: m_Pivot.x
