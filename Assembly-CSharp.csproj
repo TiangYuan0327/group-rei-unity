@@ -61,19 +61,19 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\NoteJudge.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\Flower\Scripts\FlowerSystem.cs" />
+    <Compile Include="Assets\Flower\Scripts\FlowerManager.cs" />
     <Compile Include="Assets\Scripts\Combo.cs" />
     <Compile Include="Assets\Scripts\NoteObject.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Flower\Scripts\UsageCase.cs" />
+    <Compile Include="Assets\Scripts\IntroSceneController.cs" />
     <Compile Include="Assets\Scripts\CreatNote.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\Fall.cs" />
     <Compile Include="Assets\Scripts\EnterStage.cs" />
     <Compile Include="Assets\Scripts\PostMethod.cs" />
     <Compile Include="Assets\Scripts\GetMethod.cs" />
-    <Compile Include="Assets\Flower\Scripts\FlowerSystem.cs" />
-    <Compile Include="Assets\Flower\Scripts\FlowerManager.cs" />
-    <Compile Include="Assets\Flower\Scripts\UsageCase.cs" />
-    <Compile Include="Assets\Scripts\IntroSceneController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -94,6 +94,7 @@
      <None Include="Assets\Flower\Resources\start.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Test.txt" />
      <None Include="Assets\Resources\intro.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />

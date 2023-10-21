@@ -4,62 +4,97 @@ using UnityEngine;
 using System.Xml.Serialization;
 using System;
 using System.IO;
-
+using UnityEngine.UI;
 
 public class CreatNote : MonoBehaviour
 {
-    
-    public GameObject note;
+    public GameObject NoteType1Prefab;
+    public GameObject NoteType2Prefab;
+    public GameObject NoteType3Prefab;
+    public GameObject NoteType4Prefab;
+
     public Transform canvasTransform;
-
-    public string fileName = "/NoteTest.json";
-    public NoteData[] songs;
-
-    [SerializeField]
-    NoteData notedata;
-
-    [System.Serializable]
-    public class NoteData
-    {
-        //音符種類、出現時機、音符長度、出現位置
-        public string noteType;
-        public float noteTime;
-        public float noteHeight;
-        public int noteLocation;
-    }
     private void Start()
     {
-            
-    }
-    
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.S))
+        string filePath = Application.dataPath + "/Test.txt";
+        if (File.Exists(filePath))
         {
-            Debug.Log(Application.dataPath);
-            string filePath = Application.dataPath + "/NoteTest.json";
-            if (File.Exists(filePath)) {
-                string json = File.ReadAllText(filePath);
-                songs = JsonUtility.FromJson<NoteData[]>(json);
+            string[] readText = File.ReadAllLines(filePath);
 
-                foreach (NoteData song in songs)
+            foreach (string line in readText)
+            {
+                if (line.Length >= 10)
                 {
-                    Debug.Log("Type: " + song.noteType);
-                    Debug.Log("Time: " + song.noteTime);
-                    Debug.Log("長度: " + song.noteHeight);
-                    Debug.Log("位置" + song.noteLocation);
+                    string noteKind = line.Substring(0, 1);
+                    float noteStart = float.Parse(line.Substring(1, 4));
+                    float noteEnd = float.Parse(line.Substring(5, 4));
+                    string noteLocation = line.Substring(9, 1);
+                    Debug.Log("種類:" + noteKind);
+                    Debug.Log("開始時間:" + noteStart);
+                    Debug.Log("結束時間:" + noteEnd);
+                    Debug.Log("生成位置:" + noteLocation);
+
+                    GameObject newNote = CreateNote(noteKind, noteStart, noteEnd, noteLocation);
+                    if (newNote != null)
+                    {
+                        newNote.transform.SetParent(canvasTransform, false);
+                        newNote.transform.localPosition = Vector3.zero;
+                    }
+                }
+                else
+                {
+                    Debug.Log("資料長度不對");
                 }
             }
-            else
-            {
-                Debug.Log("not found");
-            }
-
-            Debug.Log("有喔");
-        }       
-        if (Input.GetKeyDown(KeyCode.Space))
+        }
+        else
         {
+            Debug.Log("檔案不存在");
+        }
+    }
+    void Update()
+    {
+        
+    }
+    public GameObject CreateNote(string noteKind, float noteStart, float noteEnd, string noteLocation)
+    {
+        GameObject newNote = null;
+
+        switch (noteKind)
+        {
+            case "1":
+                newNote = Instantiate(NoteType1Prefab, Vector3.zero, Quaternion.identity);
+                break;
+            case "2":
+                newNote = Instantiate(NoteType2Prefab, Vector3.zero, Quaternion.identity);
+                break;
+            case "3":
+                newNote = Instantiate(NoteType3Prefab, Vector3.zero, Quaternion.identity);
+                break;
+            case "4":
+                newNote = Instantiate(NoteType4Prefab, Vector3.zero, Quaternion.identity);
+                break;
+        }
+        /*
+        if (noteKind == "1")
+        {
+            newNote = Instantiate(NoteType1Prefab, Vector3.zero, Quaternion.identity);
             
         }
+        else if (noteKind == "2")
+        {
+            newNote = Instantiate(NoteType2Prefab, Vector3.zero, Quaternion.identity);
+        }
+        else if (noteKind == "3")
+        {
+            newNote = Instantiate(NoteType3Prefab, Vector3.zero, Quaternion.identity);
+        }
+        else if (noteKind == "4")
+        {
+            newNote = Instantiate(NoteType4Prefab, Vector3.zero, Quaternion.identity);
+        }
+        */
+
+        return newNote;
     }
 }

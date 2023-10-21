@@ -1101,7 +1101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4f895d82e783b4496288daad002a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lg: {fileID: 7982474774987789847, guid: eecf1a89461c38446839c9f7e0f1082d, type: 3}
 --- !u!1 &519541131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,15 +1889,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 640010b6fa2225d428891329cefc1f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note: {fileID: 9188249003918429409, guid: a5e2319ec06689143909090292039291, type: 3}
-  canvasTransform: {fileID: 656258487}
-  fileName: /NoteTest.json
-  songs: []
-  notedata:
-    noteType: 
-    noteTime: 1
-    noteHeight: 1
-    noteLocation: 0
+  NoteType1Prefab: {fileID: 9188249003918429409, guid: a5e2319ec06689143909090292039291, type: 3}
+  NoteType2Prefab: {fileID: 8646043642124612663, guid: 080b6f53ce015174f9fec7a329ebb40e, type: 3}
+  NoteType3Prefab: {fileID: 7982474774987789847, guid: eecf1a89461c38446839c9f7e0f1082d, type: 3}
+  NoteType4Prefab: {fileID: 3195414982643556820, guid: 9e1ca915518e1084d83b25d072bb64aa, type: 3}
+  canvasTransform: {fileID: 899436196}
 --- !u!1 &1108716413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,8 +1923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f37b10be23874f1887e2b46841e8e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 0}
-  startPlaying: 0
 --- !u!4 &1108716415
 Transform:
   m_ObjectHideFlags: 0
