@@ -10,9 +10,12 @@ public class Resolution : MonoBehaviour
         canvasRect =GameObject.Find("Canvas").GetComponent<RectTransform>();
         float canvasWidth = canvasRect.rect.width;
         float canvasHeight = canvasRect.rect.height;
-        float screenRatio = Screen.width / (float)Screen.height;
+        float screenRatio = Screen.width / Screen.height;
         float referenceRatio = canvasWidth / canvasHeight;
+        Debug.Log(screenRatio);
+        Debug.Log(referenceRatio);
         Camera mainCamera = Camera.main;
         mainCamera.orthographicSize *= referenceRatio / screenRatio;
+        Debug.Log(mainCamera.orthographicSize);
     }
 }

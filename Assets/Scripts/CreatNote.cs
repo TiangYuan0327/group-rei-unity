@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 using System;
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class CreatNote : MonoBehaviour
 {
@@ -16,38 +17,13 @@ public class CreatNote : MonoBehaviour
     public Transform canvasTransform;
     private void Start()
     {
-        string filePath = Path.Combine(Application.persistentDataPath + "/Test.txt");
-        if (File.Exists(filePath))
-        {
-            string[] readText = File.ReadAllLines(filePath);
-
-            foreach (string line in readText)
-            {
-                if (line.Length >= 10)
-                {
-                    string noteKind = line.Substring(0, 1);
-                    float noteStart = float.Parse(line.Substring(1, 4))/10f;
-                    float noteEnd = float.Parse(line.Substring(5, 4))/10f;
-                    string noteLocation = line.Substring(9, 1);
-
-                    StartCoroutine(CreateNoteDelayed(noteKind, noteStart, noteEnd, noteLocation));
-                }
-                else
-                {
-                    Debug.Log("資料長度不對");
-                }
-            }
-        }
-        else
-        {
-            Debug.Log(filePath);
-        }
+        StartCoroutine(GetTextForStreamingAssets(Application.streamingAssetsPath + "/Song" + "/Test.txt"));
     }
     void Update()
     {
         
     }
-    private IEnumerator CreateNoteDelayed(string noteKind, float noteStart, float noteEnd, string noteLocation)
+    public IEnumerator CreateNoteDelayed(string noteKind, float noteStart, float noteEnd, string noteLocation)
     {
         float delay = noteStart;
         yield return new WaitForSeconds(delay);
@@ -118,5 +94,41 @@ public class CreatNote : MonoBehaviour
                 break;
         }
         return newNote;
+    }
+
+    public IEnumerator GetTextForStreamingAssets(string path)
+    {
+        using(UnityWebRequest www = UnityWebRequest.Get(path))
+        {
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Failed to download file. Error: " + www.error);
+            }
+            else
+            {
+                string textContent = www.downloadHandler.text;
+                string[] noteText = textContent.Split('\n');
+
+                foreach (string line in noteText)
+                {
+                    if (line.Length >= 10)
+                    {
+                        string noteKind = line.Substring(0, 1);
+                        float noteStart = float.Parse(line.Substring(1, 4)) / 10f;
+                        float noteEnd = float.Parse(line.Substring(5, 4)) / 10f;
+                        string noteLocation = line.Substring(9, 1);
+                        Debug.Log("靠邀");
+
+                        StartCoroutine(CreateNoteDelayed(noteKind, noteStart, noteEnd, noteLocation));
+                    }
+                    else
+                    {
+                        Debug.Log("讀取結束");
+                    }
+                }
+                Debug.Log(textContent);
+            }
+        }
     }
 }
