@@ -60,22 +60,22 @@ public class CreatNote : MonoBehaviour
         switch (noteLocation)
         {
             case "1":
-                noteVect = new Vector2(-550,450);
+                noteVect = new Vector2(-500,450);
                 break;
             case "2":
-                noteVect = new Vector2(-454, 450);
+                noteVect = new Vector2(-412.5f, 450);
                 break;
             case "3":
-                noteVect = new Vector2(-358, 450);
+                noteVect = new Vector2(-325, 450);
                 break;
             case "4":
-                noteVect = new Vector2(358, 450);
+                noteVect = new Vector2(325, 450);
                 break;
             case "5":
-                noteVect = new Vector2(454, 450);
+                noteVect = new Vector2(412.5f, 450);
                 break;
             case "6":
-                noteVect = new Vector2(550, 450);
+                noteVect = new Vector2(500, 450);
                 break;
         }
         switch (noteKind)
@@ -118,7 +118,6 @@ public class CreatNote : MonoBehaviour
                         float noteStart = float.Parse(line.Substring(1, 4)) / 10f;
                         float noteEnd = float.Parse(line.Substring(5, 4)) / 10f;
                         string noteLocation = line.Substring(9, 1);
-                        Debug.Log("靠邀");
 
                         StartCoroutine(CreateNoteDelayed(noteKind, noteStart, noteEnd, noteLocation));
                     }
@@ -127,7 +126,6 @@ public class CreatNote : MonoBehaviour
                         Debug.Log("讀取結束");
                     }
                 }
-                Debug.Log(textContent);
             }
         }
     }
