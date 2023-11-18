@@ -26,11 +26,12 @@ public class CreatNote : MonoBehaviour
     public IEnumerator CreateNoteDelayed(string noteKind, float noteStart, float noteEnd, string noteLocation)
     {
         float delay = noteStart;
+        float currentTime = 0f;
         yield return new WaitForSeconds(delay);
         
         if(noteStart != noteEnd)
         {
-            while(Time.time < noteEnd)
+            while(currentTime <= noteEnd - noteStart)
             {
                 GameObject newNote = CreateNote(noteKind, noteLocation);
                 if (newNote != null)
@@ -39,8 +40,8 @@ public class CreatNote : MonoBehaviour
                 }
 
                 yield return new WaitForSeconds(0.1f);
+                currentTime += 0.1f;
             }
-            
         }
         else
         {

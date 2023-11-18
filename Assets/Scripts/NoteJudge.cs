@@ -8,6 +8,7 @@ public class NoteJudge : MonoBehaviour
     private string jText;
     private float hitTime;
     private bool isLongEndPressed = false;
+    public AudioClip hitnote;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -59,6 +60,7 @@ public class NoteJudge : MonoBehaviour
     private void AddCombo()
     {
         Debug.Log(jText);
+        GetComponent<AudioSource>().PlayOneShot(hitnote);
         switch (jText)
         {
             case "Crash!":

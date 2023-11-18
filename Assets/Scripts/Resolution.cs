@@ -12,10 +12,7 @@ public class Resolution : MonoBehaviour
         float canvasHeight = canvasRect.rect.height;
         float screenRatio = Screen.width / Screen.height;
         float referenceRatio = canvasWidth / canvasHeight;
-        Debug.Log(screenRatio);
-        Debug.Log(referenceRatio);
         Camera mainCamera = Camera.main;
         mainCamera.orthographicSize *= referenceRatio / screenRatio;
-        Debug.Log(mainCamera.orthographicSize);
     }
 }
