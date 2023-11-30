@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8646043642124612658}
   - component: {fileID: 8646043642124612659}
   - component: {fileID: 8646043642124612656}
-  - component: {fileID: 8646043642124612657}
   m_Layer: 5
   m_Name: Color
   m_TagString: ColorHit
@@ -120,15 +119,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatTample: 120
   hasStart: 0
---- !u!114 &8646043642124612657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8646043642124612663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 636dde55f46984f208af246ad5739bf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
