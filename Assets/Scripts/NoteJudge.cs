@@ -12,6 +12,8 @@ public class NoteJudge : MonoBehaviour
     public Slider UILife;
     public GameObject fillArea;
     public AudioClip hitnote;
+    public Animator player;
+    public Text playerLifeText;
 
     private void Start()
     {
@@ -21,7 +23,11 @@ public class NoteJudge : MonoBehaviour
     private void Update()
     {
         UILife.value = playerLife;
-        if (playerLife <= 0) fillArea.SetActive(false);
+        playerLifeText.text = (((int)Mathf.Round((UILife.value * 1000)))).ToString();
+        if (playerLife <= 0) {
+            fillArea.SetActive(false);
+            UILife.value = 0;
+        } 
         else if (playerLife >= 1) playerLife = 1;
     }
 
@@ -86,6 +92,7 @@ public class NoteJudge : MonoBehaviour
                 Combo.combonumber++;
                 Combo.judgeText = jText;
                 Debug.Log(Combo.combonumber);
+                player.SetTrigger("Attack");
                 break;
             case "Boo!":
             case "Ouch!":
@@ -93,7 +100,7 @@ public class NoteJudge : MonoBehaviour
                 Combo.judgeText = jText;
                 playerLife -= 0.1f;
                 Debug.Log (Combo.combonumber);
-                Debug.Log(playerLife);
+                player.SetTrigger("Hurt");
                 break;
             default:
                 break;
