@@ -13,8 +13,8 @@ public class NoteObject : MonoBehaviour
             Combo.combonumber = 0;
             Combo.judgeText = "Ouch!";
             player.SetTrigger("Hurt");
-            if(collision.CompareTag("LongContinue")) NoteJudge.playerLife += 0.05f;
-            NoteJudge.playerLife -= 0.1f;
+            if(collision.CompareTag("LongContinue")) LifeControl.playerLife += 0.05f;
+             LifeControl.playerLife -= 0.1f;
             Destroy(collision.gameObject);
         }
     }

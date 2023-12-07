@@ -8,31 +8,26 @@ public class NoteJudge : MonoBehaviour
     private string jText;
     private float hitTime;
     private bool isLongEndPressed = false;
-    public static float playerLife;
-    public Slider UILife;
-    public GameObject fillArea;
+    private bool gameState;
+
     public AudioClip hitnote;
     public Animator player;
-    public Text playerLifeText;
+    
+    
 
     private void Start()
     {
-        playerLife = 1;
+        
+        gameState = true;
     }
 
     private void Update()
     {
-        UILife.value = playerLife;
-        playerLifeText.text = (((int)Mathf.Round((UILife.value * 1000)))).ToString();
-        if (playerLife <= 0) {
-            fillArea.SetActive(false);
-            UILife.value = 0;
-        } 
-        else if (playerLife >= 1) playerLife = 1;
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
-    {
+    {       
         if ((Joystick.crash == -1 && gameObject.CompareTag("LeftHandle")) || (gameObject.CompareTag("RightHandle") && Joystick.crash == 1))
         {
             switch (collision.tag)
@@ -52,7 +47,7 @@ public class NoteJudge : MonoBehaviour
             }
             else if (collision.CompareTag("LongContinue"))
             {
-                if (jText == "Boo!" || jText == "Ouch!") playerLife += 0.05f;
+                if (jText == "Boo!" || jText == "Ouch!") LifeControl.playerLife += 0.05f;
                 AddCombo();
                 Destroy(collision.gameObject);            
             }
@@ -76,7 +71,7 @@ public class NoteJudge : MonoBehaviour
                     Destroy(collision.gameObject);
                 }
             }
-        }     
+        }            
     }
 
     private void AddCombo()
@@ -98,7 +93,7 @@ public class NoteJudge : MonoBehaviour
             case "Ouch!":
                 Combo.combonumber = 0;
                 Combo.judgeText = jText;
-                playerLife -= 0.1f;
+                LifeControl.playerLife -= 0.1f;
                 Debug.Log (Combo.combonumber);
                 player.SetTrigger("Hurt");
                 break;
