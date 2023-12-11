@@ -43,17 +43,20 @@ public class NoteJudge : MonoBehaviour
             if (((collision.CompareTag("NormalHit") || collision.CompareTag("ColorHit"))))
             {
                 AddCombo();
+                player.SetTrigger("Attack");
                 Destroy(collision.gameObject);
             }
             else if (collision.CompareTag("LongContinue"))
             {
                 if (jText == "Boo!" || jText == "Ouch!") LifeControl.playerLife += 0.05f;
                 AddCombo();
+                player.SetTrigger("Slide");
                 Destroy(collision.gameObject);            
             }
             else if (collision.CompareTag("UpHit"))
             {
-                if(jText == "Crash!")
+                player.SetTrigger("UpAttack");
+                if (jText == "Crash!")
                 {
                     jText = "Bang!";
                     AddCombo();
@@ -87,7 +90,6 @@ public class NoteJudge : MonoBehaviour
                 Combo.combonumber++;
                 Combo.judgeText = jText;
                 Debug.Log(Combo.combonumber);
-                player.SetTrigger("Attack");
                 break;
             case "Boo!":
             case "Ouch!":
