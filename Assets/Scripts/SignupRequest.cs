@@ -45,8 +45,8 @@ public class SignupRequest : MonoBehaviour
 			"\"name\": \"" + name.text + "\", " +
 			"\"email\": \"" + email.text + "\", " +
 			"\"phone\": \"" + phone.text + "\", " +
-			"\"password\": \"" + birthday.text + "\", " +
-			"\"birthday\": \"" + password.text + "\" }";
+			"\"birthday\": \"" + birthday.text + "\", " +
+			"\"password\": \"" + password.text + "\" }";
         byte[] postData = System.Text.Encoding.UTF8.GetBytes(jsonData);
 
         using (UnityWebRequest request = UnityWebRequest.Post(url, "Post"))
