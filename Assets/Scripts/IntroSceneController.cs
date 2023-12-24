@@ -13,10 +13,10 @@ public class IntroSceneController : MonoBehaviour
         fs.SetupDialog();
         fs.ReadTextFromResource("intro");   
         fs.RegisterCommand("lock_conversation",(List<string> _params) => {
-            EnterStage.canHit = false;
+            //EnterStage.canHit = false;
         } );
         fs.RegisterCommand("release_conversation", (List<string> _params) => {
-            EnterStage.canHit = true;
+            //EnterStage.canHit = true;
         });
     }
 

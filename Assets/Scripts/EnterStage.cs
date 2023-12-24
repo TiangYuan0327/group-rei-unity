@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class EnterStage : MonoBehaviour
+public class EnterStage: MonoBehaviour
 {
-    public static bool canHit = false;
+    //public static bool canHit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,20 +15,23 @@ public class EnterStage : MonoBehaviour
 
     public void Stage()
     {
-        if (canHit)
-        {
-            Destroy(GameObject.Find("DefaultDialogPrefab(Clone)"));
             SceneManager.LoadScene("SampleScene");
-        }
         
     }
     public void exit()
     {
-        if (canHit)
-        {
-            Application.Quit();
-        }
+        Application.Quit();
         
+    }
+
+    public void EnterDashboard()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public void EnterLogin()
+    {
+        SceneManager.LoadScene("Login");
     }
     // Update is called once per frame
     void Update()
