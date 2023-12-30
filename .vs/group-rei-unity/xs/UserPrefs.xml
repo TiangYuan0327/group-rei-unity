@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CreatNote.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SignupRequest.cs">
     <Files>
       <File FileName="Assets/Scripts/EnterStage.cs" Line="5" Column="1" />
       <File FileName="Assets/Scripts/GetMethod.cs" />
-      <File FileName="Assets/Scripts/LoginRequest.cs" Line="20" Column="24" />
+      <File FileName="Assets/Scripts/LoginRequest.cs" Line="20" Column="1" />
       <File FileName="Assets/Scripts/StartPage.cs" Line="18" Column="6" />
-      <File FileName="Assets/Scripts/SignupRequest.cs" />
+      <File FileName="Assets/Scripts/SignupRequest.cs" Line="25" Column="34" />
       <File FileName="Assets/Scripts/CreatNote.cs" Line="107" Column="1" />
+      <File FileName="Assets/Scripts/PostMethod.cs" Line="19" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

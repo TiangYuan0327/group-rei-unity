@@ -17,8 +17,8 @@ public class LoginRequest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        outputArea = GameObject.Find("OutputArea").GetComponent<InputField>();
-        GameObject.Find("Button").GetComponent<Button>().onClick.AddListener(PostData);
+
+        GameObject.Find("Login").GetComponent<Button>().onClick.AddListener(PostData);
 
     }
 
@@ -48,11 +48,14 @@ public class LoginRequest : MonoBehaviour
             yield return request.SendWebRequest();
             if (request.isNetworkError || request.isHttpError)
             {
-                outputArea.text = request.error;
+                Debug.Log("登入失敗");
+
             }
             else
             {
-                outputArea.text = request.downloadHandler.text;
+                Debug.Log("登入成功");
+                SceneManager.LoadScene("Main");
+
             }
         }
     }
