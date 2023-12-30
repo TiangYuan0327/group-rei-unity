@@ -11,7 +11,6 @@ using UnityEngine.SceneManagement;
 
 public class SignupRequest : MonoBehaviour
 {
-    InputField outputArea;
     public InputField uid;
     public InputField name;
     public InputField email;
@@ -21,7 +20,6 @@ public class SignupRequest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        outputArea = GameObject.Find("OutputArea").GetComponent<InputField>();
         GameObject.Find("Register").GetComponent<Button>().onClick.AddListener(PostData);
 
     }
@@ -57,11 +55,11 @@ public class SignupRequest : MonoBehaviour
             yield return request.SendWebRequest();
             if (request.isNetworkError || request.isHttpError)
             {
-                outputArea.text = request.error;
+
             }
             else
             {
-                outputArea.text = request.downloadHandler.text;
+
             }
         }
     }
