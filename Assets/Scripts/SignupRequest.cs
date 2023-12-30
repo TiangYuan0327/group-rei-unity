@@ -22,7 +22,7 @@ public class SignupRequest : MonoBehaviour
     void Start()
     {
         outputArea = GameObject.Find("OutputArea").GetComponent<InputField>();
-        GameObject.Find("Button").GetComponent<Button>().onClick.AddListener(PostData);
+        GameObject.Find("Register").GetComponent<Button>().onClick.AddListener(PostData);
 
     }
 
