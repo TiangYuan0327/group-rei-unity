@@ -17,11 +17,11 @@ public class SignupRequest : MonoBehaviour
     public InputField phone;
     public InputField birthday;
     public InputField password;
+
     // Start is called before the first frame update
     void Start()
     {
         GameObject.Find("Register").GetComponent<Button>().onClick.AddListener(PostData);
-
     }
 
     // Update is called once per frame
@@ -43,8 +43,8 @@ public class SignupRequest : MonoBehaviour
 			"\"name\": \"" + name.text + "\", " +
 			"\"email\": \"" + email.text + "\", " +
 			"\"phone\": \"" + phone.text + "\", " +
-			"\"password\": \"" + birthday.text + "\", " +
-			"\"birthday\": \"" + password.text + "\" }";
+			"\"birthday\": \"" + birthday.text + "\", " +
+			"\"password\": \"" + password.text + "\" }";
         byte[] postData = System.Text.Encoding.UTF8.GetBytes(jsonData);
 
         using (UnityWebRequest request = UnityWebRequest.Post(url, "Post"))
@@ -56,18 +56,18 @@ public class SignupRequest : MonoBehaviour
             if (request.isNetworkError || request.isHttpError)
             {
 
+                Debug.Log("註冊失敗");
             }
             else
             {
-
+                GameObject.Find("LoginBackground").SetActive(true);
+                GameObject.Find("SignupBackground").SetActive(false);
+                Debug.Log("註冊成功");
             }
         }
     }
     public void back()
     {
-        SceneManager.LoadScene("StartPage");
-
-
 
     }
 }
