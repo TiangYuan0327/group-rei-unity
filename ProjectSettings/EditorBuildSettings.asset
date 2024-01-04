@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestWebrequest.unity
+    path: Assets/Scenes/LoginPage.unity
     guid: 17fb72e7286cab84d9abd2194d89b8ae
   - enabled: 1
     path: Assets/Scenes/StartPage.unity

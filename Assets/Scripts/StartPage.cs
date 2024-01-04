@@ -6,12 +6,11 @@ using UnityEngine.UI;
 
 public class StartPage : MonoBehaviour
 {
-    public GameObject toSignup;
-    public GameObject toLogin;
+    public GameObject loginBackground;
+    public GameObject signupBackground;
 
     public void Login()
     {
-        SceneManager.LoadScene("login");
 
 
 
@@ -19,10 +18,8 @@ public class StartPage : MonoBehaviour
 
     public void Signup()
     {
-        SceneManager.LoadScene("signup");
-
-
-
+        GameObject.Find("LoginBackground").SetActive(false);
+        GameObject.Find("SignupBackground").SetActive(true);
     }
 
 
@@ -31,7 +28,6 @@ public class StartPage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
